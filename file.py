@@ -7,7 +7,7 @@ Entrée : élément à enfiler avec la fonction enfiler()
 Résultat : file contenant les éléments ajoutés, consultés ou retirés
 """
 
-from exceptions import PileVideError
+from exceptions import PileVideError    # exception pour défiler une pile vide
 
 class File:
     def __init__(self):

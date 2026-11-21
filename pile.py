@@ -7,7 +7,7 @@ Entrée : élément à empiler avec empiler()
 Résultat : pile avec les éléments ajoutés, consultés ou retirés
 """
 
-from exceptions import PileVideError
+from exceptions import PileVideError    # exception pour dépiler une pile vide
 
 class Pile:
     def __init__(self):

@@ -35,9 +35,15 @@ solitaire/
 ├── pile.py           # classe Pile
 ├── file.py           # classe File
 ├── carte.py          # classe Carte
-├── exceptions.py     # PileVideError, FileVideError, MouvementInvalideError, CarteCacheeError
+├── exceptions.py     # PileVideError, FileVideError, MouvementInvalideError, CarteCacheeError, BooleenError
 ├── jeu.py            # logique du jeu 
-└── interface.py      # affichage Tkinter
+├── interface.py      # affichage Tkinter
+|
+└── carte/
+    ├── carreau       # gif fondation carreau
+    ├── coeur         # gif fondation coeur
+    ├── pique         # gif fondation pique
+    └── trefle        # gif fondation trefle
 ```
 
 ## Contributeurs

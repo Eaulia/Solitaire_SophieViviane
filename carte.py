@@ -8,9 +8,42 @@ Entrée : une valeur et une couleur
 Résultat : un objet Carte possédant une valeur,
 une couleur et un état (visible ou cachée).
 """
+from exceptions import BooleenError
 
 class Carte:
-    def __init__(self, valeur, couleur, etat):
+    def __init__(self, valeur, couleur, etat = False):
         self.valeur = valeur
         self.couleur = couleur
-        self._etat(etat)
+        self.set_etat(etat)
+
+    def get_etat(self):
+        return self.__etat
+
+    def set_etat(self, val):
+        if type(val) != bool:
+            raise BooleenError
+        self.__etat = val
+
+    def get_valeur(self):
+        """
+        Valeur de la carte
+        """
+        return self.valeur
+
+    def get_couleur(self):
+        """
+        Connaitre la couleur de la carte
+        """
+        return self.couleur
+
+    def est_visible(self):
+        """
+        Savoir si la carte est visible
+        """
+        return self.get_etat()
+
+    def retourner(self):
+        """
+        Retourner une carte
+        """
+        self.set_etat(not self.get_etat())

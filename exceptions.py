@@ -20,3 +20,7 @@ class MouvementInvalideError(Exception):
 class CarteCacheeError(Exception):
     """si on tente de déplacer ou de manipuler une carte face cachée"""
     pass
+
+class BooleenError(Exception):
+    """si ce n'est pas du type booleen"""
+    pass

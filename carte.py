@@ -8,6 +8,7 @@ Entrée : une valeur et une couleur
 Résultat : un objet Carte possédant une valeur,
 une couleur et un état (visible ou cachée).
 """
+
 from exceptions import BooleenError
 
 class Carte:

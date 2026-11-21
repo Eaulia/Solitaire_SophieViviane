@@ -1,10 +1,10 @@
 """
 Pile (version 0)
-Auteur : Sophie
+Auteur : Le cours pptx/Mr.Rossier
 Date : 21/11/2026
 Le fichier Pile du cours
 Entrée : élément à empiler avec empiler()
-Résultat : pile avec les éléments ajoutés
+Résultat : pile avec les éléments ajoutés, consultés ou retirés
 """
 
 from exceptions import PileVideError

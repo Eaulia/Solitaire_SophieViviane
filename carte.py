@@ -9,7 +9,7 @@ Résultat : un objet Carte possédant une valeur,
 une couleur et un état (visible ou cachée).
 """
 
-from exceptions import BooleenError
+from exceptions import BooleenError     # exception pour le type booléen
 
 class Carte:
     def __init__(self, valeur, couleur, etat = False):

@@ -40,10 +40,10 @@ solitaire/
 ├── interface.py      # affichage Tkinter
 |
 └── carte/
-    ├── carreau       # gif fondation carreau
-    ├── coeur         # gif fondation coeur
-    ├── pique         # gif fondation pique
-    └── trefle        # gif fondation trefle
+    ├── carreau       # gif couleur carreau
+    ├── coeur         # gif couleur coeur
+    ├── pique         # gif couleur pique
+    └── trefle        # gif couleur trefle
 ```
 
 ## Contributeurs

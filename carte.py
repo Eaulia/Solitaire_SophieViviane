@@ -48,3 +48,6 @@ class Carte:
         Retourner une carte
         """
         self.set_etat(not self.get_etat())
+
+    def __repr__(self) -> str:
+        return f"{self.valeur} de {self.couleur}"

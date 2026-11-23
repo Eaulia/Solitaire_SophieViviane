@@ -7,7 +7,7 @@ Entrée : élément à enfiler avec la fonction enfiler()
 Résultat : file contenant les éléments ajoutés, consultés ou retirés
 """
 
-from exceptions import PileVideError    # exception pour défiler une pile vide
+from exceptions import FileVideError    # exception pour défiler une pile vide
 
 class File:
     def __init__(self):
@@ -21,7 +21,7 @@ class File:
 
     def tete(self):
         if self.est_vide():
-            raise PileVideError
+            raise FileVideError
         return self.f[0]
 
     def taille(self):
@@ -32,5 +32,5 @@ class File:
 
     def defiler(self):
         if self.est_vide():
-            raise PileVideError
+            raise FileVideError
         return self.f.pop(0)

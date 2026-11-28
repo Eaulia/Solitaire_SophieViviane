@@ -9,9 +9,16 @@ Commentaires :
 ----------------------------------------------------
 """
 
-from menu import Menu
+from game.menu import Menu
+from game.talon import Talon
 
 if __name__ == "__main__":
     m = Menu()
+
+    print("TEST COLONNES")
     m.debut_jeu()
-    print(m.colonnes())
+    for i, colonne in enumerate(m.colonnes(), start=1):
+        print(f"Colonne {i} : {colonne}")
+
+    print("TEST TALON")
+    print(m.test_talon())

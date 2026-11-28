@@ -37,6 +37,12 @@ class Carte:
         """
         return self.couleur
 
+    def est_rouge(self):
+        return self.get_couleur() == ("Coeur" or "Carreau")
+
+    def get_nom_img(self):
+        return f"cartes/{self.get_couleur}/{self.valeur}_{self.get_couleur}.gif"
+
     def est_visible(self):
         """
         Savoir si la carte est visible
@@ -50,4 +56,5 @@ class Carte:
         self.set_etat(not self.get_etat())
 
     def __repr__(self) -> str:
-        return f"{self.valeur} de {self.couleur}"
+        symboles = {"Coeur": "♥", "Carreau": "♦", "Trefle": "♣", "Pique": "♠"}
+        return f"{self.valeur}{symboles[self.couleur]}"

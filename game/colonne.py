@@ -1,11 +1,11 @@
 """
 ----------------------------------------------------
-COLLONE.PY - Les 7 colonnes du jeu
+COLONNE.PY - Les 7 colonnes du jeu
 ----------------------------------------------------
 """
 
-from pile import Pile
-from file import File
+from fonctions.pile import Pile
+from fonctions.file import File
 from exceptions import MouvementInvalideError
 
 class Colonne:
@@ -50,7 +50,7 @@ class Colonne:
         reste = File()
         suite = File()
         trouvee = False
-
+        
         for _ in range(self.visibles.taille()):
             c = self.visibles.defiler()
             if c is carte:
@@ -60,9 +60,10 @@ class Colonne:
             else:
                 reste.enfiler(c)
 
+        self.visibles = reste #remet le reste
+
         if not trouvee:
-            self.visibles = reste #retour  à l'etat l'origine
-            raise MouvementInvalideError
+            raise MouvementInvalideError("Mouvement impossible")
         
         return suite
 
@@ -76,4 +77,9 @@ class Colonne:
             self.visibles.enfiler(carte)
 
     def __repr__(self) -> str:
-        return f"{self.cachees}"
+        texte = "[??]" * self.cachees.taille()
+        for _ in range(self.visibles.taille()):
+            carte = self.visibles.defiler()
+            texte += f"[{carte}] "
+            self.visibles.enfiler(carte)    # on la remet : la file ne change pas
+        return texte

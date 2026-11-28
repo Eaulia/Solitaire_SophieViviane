@@ -9,7 +9,7 @@ Jeu de Solitaire en Python avec interface graphique Tkinter, pour un projet d'NS
 
 ```bash
 git clone https://github.com/Eaulia/Solitaire_SophieViviane.git
-cd solitaire
+cd Solitaire_SophieViviane
 ```
 
 ## Utilisation
@@ -39,7 +39,7 @@ solitaire/
 ├── jeu.py            # logique du jeu 
 ├── interface.py      # affichage Tkinter
 |
-└── carte/
+└── cartes/
     ├── carreau       # gif couleur carreau
     ├── coeur         # gif couleur coeur
     ├── pique         # gif couleur pique

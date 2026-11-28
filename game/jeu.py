@@ -1,4 +1,8 @@
 """
+----------------------------------------------------
+JEU.PY - Mise en place + pioche
+----------------------------------------------------
+
 Jeu (version 0)
 Auteur : Sophie
 Date : 23/11/2026
@@ -14,10 +18,11 @@ Commentaires :
 - J'ai fusionné creer paquet et melanger 
 """
 
-from carte import Carte     # importation de la classe Carte
-from pile import Pile       # importation de la classe Pile
-from colonne import Colonne # importation de la classe Colonne
+from game.carte import Carte     # importation de la classe Carte
+from fonctions.pile import Pile       # importation de la classe Pile
+from game.colonne import Colonne # importation de la classe Colonne
 import random               # module le mélange de carte
+from game.talon import Talon         # importation de la classe Talon
 
 class Jeu:
     def __init__(self):
@@ -52,3 +57,23 @@ class Jeu:
             carte = self.pioche.depiler()
             carte.set_etat(True)
             col.ajouter_visible(carte) #derniere carte visible
+
+    def retourner_talon(self):
+        p = Pile()
+        while not Talon().talon.est_vide():
+            p.empiler(Talon().talon.defiler())
+        while not p.est_vide():
+            carte = p.depiler()
+            carte.set_etat(False)
+            return self.pioche.empiler(carte)
+        
+    def piocher(self):
+        """
+        Piocher des cartes
+        """
+        if self.pioche.est_vide():
+            self.retourner_talon()
+        else:
+            carte = self.pioche.depiler()
+            carte.set_etat(True)
+            Talon().talon.enfiler(carte)
